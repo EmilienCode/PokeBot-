@@ -137,4 +137,8 @@ async def type_command(interaction: discord.Interaction, element: str):
     else:
         await interaction.response.send_message(f"⚠️ Le type `{element}` n'existe pas. Réessaie avec un type valide (ex: Feu, Eau...).", ephemeral=True)
 
+@bot.tree.command(name="credits", description="Affiche les crédits")
+async def credit_command(interaction: discord.Interaction):
+    await interaction.response.send_message("Bot créé par Crazymilien")
+
 bot.run(os.getenv('DISCORD_TOKEN'))
